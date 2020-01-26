@@ -11,9 +11,10 @@ function App() {
         <h1> Auth Friends</h1>
         <Switch>
           <Route path="/public" component={Public} />
-          <Route path="/login" component={Login} />
+          <Route path="/login" component={Login} />          
+          <PrivateRoute path='/protected' component={Protected} />
+
           <Route path="/" component={Header} />
-          {/* <PrivateRoute path='/protected' component={Protected} /> */}
         </Switch>
       </header>
     </div>
