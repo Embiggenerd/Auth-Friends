@@ -13,6 +13,12 @@
   }
 }
 
+.error {
+  left: 37%;
+  position: absolute;
+  color: red;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -13,7 +13,6 @@ function App() {
           <Route path="/public" component={Public} />
           <Route path="/login" component={Login} />          
           <PrivateRoute path='/protected' component={Protected} />
-
           <Route path="/" component={Header} />
         </Switch>
       </header>
