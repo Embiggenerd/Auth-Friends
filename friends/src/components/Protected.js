@@ -26,7 +26,7 @@ export const Protected = () => {
         <div>
             <FriendForm handleSubmitFriend={handleSubmitFriend} />
             <h2>Friends</h2>
-            {friends.map(f => <Friend key={f.id} {...f} />)}
+            {friends.map(f => <Friend handleSubmitFriend={handleSubmitFriend} key={f.id} {...f} />)}
         </div>
     )
 }
