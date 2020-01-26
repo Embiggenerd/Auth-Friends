@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-import { useAxiosWithAuth } from './hooks'
+import { useAxiosWithAuth } from '../hooks'
 import { Friend } from '../components'
+import { FriendForm } from './FriendForm';
 
 export const Protected = () => {
 
@@ -11,17 +12,19 @@ export const Protected = () => {
 
     useEffect(() => {
         const getFriends = async () => {
-
             const { data } = await axios.get('http://localhost:5000/api/friends')
-
-            // console.log('getFriendsData', data)
             setFriends(data)
         }
         getFriends()
     }, [])
 
+    const handleSubmitFriend = newFriends => {
+        setFriends(newFriends)
+    }
+
     return (
         <div>
+            <FriendForm handleSubmitFriend={handleSubmitFriend} />
             <h2>Friends</h2>
             {friends.map(f => <Friend key={f.id} {...f} />)}
         </div>
